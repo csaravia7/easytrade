@@ -1,7 +1,7 @@
 apiVersion: dynatrace.com/v1beta1
 kind: DynaKube
 metadata:
-  name: produccion
+  name: dynatest
   namespace: dynatrace
 spec:
   # Dynatrace apiUrl including the `/api` path at the end.
@@ -118,9 +118,9 @@ spec:
       # Optional: Adds custom environment variables to OneAgent pods
       #
       # env: []
-      #env:
-      #  - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-      #    value: "false"
+      env:
+        - name: ONEAGENT_ENABLE_VOLUME_STORAGE
+          value: "true"
       # Optional: Enables or disables automatic updates of OneAgent pods
       # By default, if a new version is available, the OneAgent pods are restarted to apply the update
       # If set to "false", this behavior is disabled
